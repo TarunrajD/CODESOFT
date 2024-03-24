@@ -1,0 +1,75 @@
+def add(x, y):
+  return x + y
+
+def subtract(x, y):
+  return x - y
+
+def multiply(x, y):
+  return x * y
+
+def divide(x, y):
+  if y != 0:
+      return x / y
+  else:
+      return "Cannot divide by zero"
+def square(x):
+    return x**2
+def exponent(x,y):
+    if y==0:
+        return 1
+    else:
+        return x**y
+def remainder(x,y):
+    return x%y
+        
+def calculator():
+  print("Welcome to the Calculator!")
+
+  while True:
+      print("1. Add")
+      print("2. Subtract")
+      print("3. Multiply")
+      print("4. Divide")
+      print("5. Remainder")
+      print("6. Square")
+      print("7. Exponent")
+      print("8. Exit")
+      choice = input("Enter your choice (1-8): ")
+
+      if choice in ["1", "2", "3", "4","5"]:
+          num1 = float(input("Enter first number: "))
+          num2 = float(input("Enter second number: "))
+
+          if choice == "1":
+              result = add(num1, num2)
+              print(f"Result: {result}")
+          elif choice == "2":
+              result = subtract(num1, num2)
+              print(f"Result: {result}")
+          elif choice == "3":
+              result = multiply(num1, num2)
+              print(f"Result: {result}")
+          elif choice == "4":
+              result = divide(num1, num2)
+              print(f"Result: {result}")
+          elif choice == "5":
+              result = remainder(num1,num2)
+              print(f"Result: {result}")
+      elif choice == "6":
+                num1=float(input("Enter the number:  "))
+                result = square(num1)
+                print(f"Result: {result}")
+      elif choice == "7":
+            num1 = float(input("Enter base number: "))
+            num2 = float(input("Enter exponent number: "))
+            result=exponent(num1,num2)
+            print(f"Result: {result}")
+      elif choice == "8":
+           print("Exiting the calculator. Goodbye!")
+           break
+
+      else:
+          print("Invalid choice. Please enter a number between 1 and 6.")
+
+if __name__ == "__main__":
+  calculator()
